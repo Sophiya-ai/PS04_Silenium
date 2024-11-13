@@ -72,11 +72,10 @@ try:
     search_box.send_keys(Keys.RETURN)
     WebDriverWait(browser, 3)
 
-
     # находим ссылку элемента
     #a = browser.find_element(By.LINK_TEXT, request)
     a = WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.LINK_TEXT, request)))
-
+    WebDriverWait(browser, 10)
     # кликаем по найденной ссылке
     a.click()
     WebDriverWait(browser, 10)
