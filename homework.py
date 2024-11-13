@@ -7,8 +7,12 @@ from selenium.webdriver.common.by import By
 import random
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
+from selenium.webdriver.chrome.service import Service
+from selenium.webdriver.chrome.options import Options
 
-browser = webdriver.Chrome()
+service = Service('D:\\chromedriver.exe')
+options = Options()  # Можно настроить опции, если требуется
+browser = webdriver.Chrome(service=service, options=options)
 
 def func_menu():
     menu = int(input('Выберите одно из действий:\n'
