@@ -29,14 +29,14 @@ def func_menu_1():
 
 
 def paragraph():
-    global browser, a
+    global browser
     paragraphs = browser.find_elements(By.TAG_NAME, 'p')  # поиск по имени тега
     for paragraph in paragraphs:
         print(paragraph.text)
         input()
 
 def hatnote():
-    global browser, a
+    global browser
     try:
         hatnotes = []
         for element in browser.find_elements(By.TAG_NAME, 'div'):
