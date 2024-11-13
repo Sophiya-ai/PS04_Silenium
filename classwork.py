@@ -31,6 +31,7 @@ search_box.send_keys(Keys.RETURN)
 time.sleep(5)
 #находим ссылку элемента
 a = browser.find_element(By.LINK_TEXT, 'Солнечная система')
+print(a)
 #кликаем по найденной ссылке
 a.click()
 
