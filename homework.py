@@ -13,7 +13,7 @@ from selenium.webdriver.chrome.options import Options
 options = Options()  # Можно настроить опции, если требуется
 options.add_argument("--no-sandbox") #для устранения возможных проблем доступа к системе
 options.add_argument("--disable-dev-shm-usage") #для использования разделяемой памяти, что может предотвратить сбои при недостатке ресурсов
-# browser = webdriver.Chrome(service=service, options=options)
+browser = webdriver.Chrome(options=options)
 
 def func_menu():
     menu = int(input('Выберите одно из действий:\n'
@@ -53,9 +53,9 @@ def hatnote(browser):
         print(f"Ошибка при поиске связанных статей: {e}")
         return None
 
-browser = webdriver.Chrome()
+
 try:
-    request = input("Ведите запрос для Википедии, учитывая Ё при вводе: ")
+    request = input("Введите запрос для Википедии, учитывая Ё при вводе: ")
     #заходим на главную страницу википедии
     browser.get('https://ru.wikipedia.org/wiki/%D0%97%D0%B0%D0%B3%D0%BB%D0%B0%D0%B2%D0%BD%D0%B0%D1%8F_%D1%81%D1%82%D1%80%D0%B0%D0%BD%D0%B8%D1%86%D0%B0')
     #проверяем на правильной ли странице находимся
@@ -90,7 +90,7 @@ try:
         elif menu == 2:
             # переход на связанную произвольную страницу
             link = hatnote(browser)
-            if link != None:
+            if link:
                 browser.get(link)
                 WebDriverWait(browser, 5)
                 menu_1 = func_menu_1()
@@ -100,7 +100,7 @@ try:
                 elif menu_1 == 2:
                     # переход на связанную произвольную страницу
                     link = hatnote(browser)
-                    if link != None:
+                    if link:
                         browser.get(link)
                         WebDriverWait(browser, 5)
 
