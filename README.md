@@ -12,4 +12,9 @@
    - выйти из программы.
 
    [код программы](homework.py)
+
+   Установите зависимости:
+   ```bash
+   pip install -r requirements.txt
+   ```
  
